@@ -9,7 +9,6 @@
 
   <meta name="description" content="Discover homes for rent and temporary stays across Kenya with Pad Casa. Find a place that feels like home.">
 
-  <!-- PAD CASA BROWSER ICON -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <style>
@@ -86,7 +85,7 @@
 
     .hero {
       text-align: center;
-      padding: 100px 20px 90px;
+      padding: 100px 20px 85px;
       background: linear-gradient(
         180deg,
         #f0f6ff 0%,
@@ -105,32 +104,9 @@
 
     .hero p {
       max-width: 640px;
-      margin: 23px auto 32px;
+      margin: 23px auto 0;
       color: #64748b;
       font-size: 18px;
-    }
-
-    /* DOWNLOAD BUTTON */
-
-    .download {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #1267D6;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 16px 30px;
-      border-radius: 9px;
-      font-weight: 700;
-      font-size: 17px;
-      box-shadow: 0 8px 22px rgba(18, 103, 214, 0.2);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .download:hover {
-      background: #0d55b5;
-      transform: translateY(-2px);
     }
 
     /* SECTION INTRODUCTION */
@@ -202,23 +178,45 @@
       padding: 10px 20px 55px;
     }
 
-    /* CLOSING SECTION */
+    /* DOWNLOAD SECTION */
 
-    .closing {
+    .download-section {
       text-align: center;
-      padding: 65px 20px;
-      background: #f5f8fc;
+      padding: 75px 20px 80px;
+      background: #f0f6ff;
     }
 
-    .closing h2 {
-      font-size: 30px;
+    .download-section h2 {
       color: #142d50;
+      font-size: 34px;
+      margin-bottom: 12px;
     }
 
-    .closing p {
+    .download-section p {
       color: #64748b;
-      margin-top: 10px;
-      font-size: 16px;
+      font-size: 17px;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #1267D6;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 17px 32px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 17px;
+      box-shadow: 0 8px 22px rgba(18, 103, 214, 0.2);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .download:hover {
+      background: #0d55b5;
+      transform: translateY(-2px);
     }
 
     /* FOOTER */
@@ -269,11 +267,6 @@
         font-size: 16px;
       }
 
-      .download {
-        font-size: 15px;
-        padding: 15px 22px;
-      }
-
       .section-heading {
         padding-top: 45px;
       }
@@ -292,12 +285,21 @@
         height: 235px;
       }
 
-      .closing {
-        padding: 50px 20px;
+      .download-section {
+        padding: 55px 20px 60px;
       }
 
-      .closing h2 {
-        font-size: 25px;
+      .download-section h2 {
+        font-size: 27px;
+      }
+
+      .download-section p {
+        font-size: 15px;
+      }
+
+      .download {
+        font-size: 15px;
+        padding: 15px 22px;
       }
     }
 
@@ -341,13 +343,6 @@
         Discover homes for rent and temporary stays across Kenya.
         Your next place to call home is just a tap away.
       </p>
-
-      <a
-        class="download"
-        href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk"
-      >
-        Download Pad Casa for Android
-      </a>
     </section>
 
     <!-- PROPERTY GALLERY INTRODUCTION -->
@@ -427,14 +422,24 @@
       Photographs are illustrative and do not represent confirmed available listings.
     </p>
 
-    <!-- CLOSING SECTION -->
+    <!-- DOWNLOAD SECTION AT THE BOTTOM -->
 
-    <section class="closing">
-      <h2>Your Next Stay Starts with Pad Casa</h2>
+    <section class="download-section">
+
+      <h2>Ready to Find Your Place?</h2>
 
       <p>
-        Explore. Discover. Find your place.
+        Get started with Pad Casa. Discover homes and temporary
+        stays across Kenya, all from your Android device.
       </p>
+
+      <a
+        class="download"
+        href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk"
+      >
+        Download Pad Casa for Android
+      </a>
+
     </section>
 
   </main>
