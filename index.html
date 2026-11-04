@@ -4,142 +4,326 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1267D6">
+
   <title>Pad Casa | Find a Place That Feels Like Home</title>
-  <meta name="description" content="Discover homes and temporary stays across Kenya with Pad Casa. Find a place that feels like home.">
+
+  <meta name="description" content="Discover homes for rent and temporary stays across Kenya with Pad Casa. Find a place that feels like home.">
+
+  <!-- PAD CASA BROWSER ICON -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #17243a;
-      background: #fff;
+      background: #ffffff;
       line-height: 1.6;
     }
 
+    /* HEADER */
+
     header {
-      padding: 22px 7%;
+      padding: 17px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #edf1f6;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .logo {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .logo-text {
       color: #1267D6;
       font-size: 27px;
       font-weight: 800;
       letter-spacing: -1px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
     nav a {
       color: #34445b;
       text-decoration: none;
-      margin-left: 25px;
       font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
     }
+
+    nav a:hover {
+      color: #1267D6;
+    }
+
+    /* HERO */
 
     .hero {
       text-align: center;
-      padding: 95px 20px 85px;
-      background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+      padding: 100px 20px 90px;
+      background: linear-gradient(
+        180deg,
+        #f0f6ff 0%,
+        #ffffff 100%
+      );
     }
 
     .hero h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin: auto;
-      font-size: clamp(38px, 6vw, 62px);
+      font-size: clamp(38px, 6vw, 64px);
       line-height: 1.12;
       letter-spacing: -2px;
       color: #142d50;
     }
 
     .hero p {
-      max-width: 620px;
-      margin: 22px auto 30px;
+      max-width: 640px;
+      margin: 23px auto 32px;
       color: #64748b;
       font-size: 18px;
     }
 
+    /* DOWNLOAD BUTTON */
+
     .download {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       background: #1267D6;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       padding: 16px 30px;
       border-radius: 9px;
       font-weight: 700;
       font-size: 17px;
-      box-shadow: 0 8px 22px rgba(18,103,214,.2);
+      box-shadow: 0 8px 22px rgba(18, 103, 214, 0.2);
+      transition: background 0.2s, transform 0.2s;
     }
 
-    .download:hover { background: #0d55b5; }
+    .download:hover {
+      background: #0d55b5;
+      transform: translateY(-2px);
+    }
 
-    .features {
-      max-width: 1050px;
+    /* SECTION INTRODUCTION */
+
+    .section-heading {
+      text-align: center;
+      padding: 65px 20px 15px;
+    }
+
+    .section-heading h2 {
+      color: #142d50;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    /* PROPERTY GALLERY */
+
+    .property-gallery {
+      max-width: 1100px;
       margin: auto;
-      padding: 65px 22px 80px;
+      padding: 35px 22px 20px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 28px;
     }
 
-    .feature {
-      padding: 35px;
-      border: 1px solid #e8eef6;
+    .property-card {
+      overflow: hidden;
       border-radius: 15px;
-      background: white;
+      border: 1px solid #e8eef6;
+      background: #ffffff;
+      box-shadow: 0 5px 18px rgba(20, 45, 80, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .feature .symbol {
-      font-size: 35px;
-      margin-bottom: 12px;
+    .property-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(20, 45, 80, 0.1);
     }
 
-    .feature h2 {
+    .property-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .property-card h3 {
       color: #1267D6;
-      margin-bottom: 10px;
-      font-size: 23px;
+      font-size: 21px;
+      padding: 17px 20px 5px;
     }
 
-    .feature p { color: #64748b; }
+    .property-card p {
+      color: #64748b;
+      padding: 0 20px 20px;
+      font-size: 15px;
+    }
+
+    .photo-note {
+      text-align: center;
+      color: #8491a3;
+      font-size: 13px;
+      padding: 10px 20px 55px;
+    }
+
+    /* CLOSING SECTION */
 
     .closing {
       text-align: center;
-      padding: 55px 20px;
+      padding: 65px 20px;
       background: #f5f8fc;
     }
 
     .closing h2 {
-      font-size: 29px;
+      font-size: 30px;
       color: #142d50;
     }
 
     .closing p {
       color: #64748b;
       margin-top: 10px;
+      font-size: 16px;
     }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 25px 15px;
       color: #8491a3;
       font-size: 14px;
+      border-top: 1px solid #edf1f6;
     }
 
+    /* MOBILE RESPONSIVENESS */
+
     @media (max-width: 650px) {
-      header { padding: 18px 5%; }
-      nav a { margin-left: 12px; font-size: 13px; }
-      .logo { font-size: 23px; }
-      .hero { padding: 75px 20px 65px; }
-      .features { grid-template-columns: 1fr; padding-top: 35px; }
-      .feature { padding: 27px; }
+      header {
+        padding: 13px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo-text {
+        font-size: 23px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 75px 20px 65px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .download {
+        font-size: 15px;
+        padding: 15px 22px;
+      }
+
+      .section-heading {
+        padding-top: 45px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .property-gallery {
+        grid-template-columns: 1fr;
+        padding: 25px 18px 15px;
+        gap: 22px;
+      }
+
+      .property-card img {
+        height: 235px;
+      }
+
+      .closing {
+        padding: 50px 20px;
+      }
+
+      .closing h2 {
+        font-size: 25px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
+
   <header>
-    <div class="logo">Pad Casa</div>
+    <a href="#" class="brand" aria-label="Pad Casa home">
+      <img src="padcasa-circle.svg" alt="Pad Casa logo">
+      <span class="logo-text">Pad Casa</span>
+    </a>
+
     <nav>
       <a href="#homes">Homes</a>
       <a href="#temporary-stays">Temporary Stays</a>
@@ -147,47 +331,119 @@
   </header>
 
   <main>
+
+    <!-- HERO -->
+
     <section class="hero">
       <h1>Find a Place That Feels Like Home</h1>
+
       <p>
         Discover homes for rent and temporary stays across Kenya.
         Your next place to call home is just a tap away.
       </p>
-      <a class="download"
-         href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk">
+
+      <a
+        class="download"
+        href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk"
+      >
         Download Pad Casa for Android
       </a>
     </section>
 
-    <section class="features">
-      <article class="feature" id="homes">
-        <div class="symbol">🏡</div>
-        <h2>Find Your Next Home</h2>
+    <!-- PROPERTY GALLERY INTRODUCTION -->
+
+    <section class="section-heading">
+      <h2>Explore What Pad Casa Offers</h2>
+
+      <p>
+        Whether you're looking for a home or a place to stay,
+        start your search with Pad Casa.
+      </p>
+    </section>
+
+    <!-- PROPERTY PHOTOGRAPHS -->
+
+    <section class="property-gallery">
+
+      <article class="property-card" id="homes">
+        <img
+          src="images/apartments.jpg"
+          alt="Modern apartment building"
+          loading="lazy"
+        >
+
+        <h3>Modern Apartments</h3>
+
         <p>
-          Explore houses and apartments for rent. Connect with
-          landlords and agents to find a place that suits your needs.
+          Explore comfortable apartments for your next home.
         </p>
       </article>
 
-      <article class="feature" id="temporary-stays">
-        <div class="symbol">🛏️</div>
-        <h2>Temporary Stays</h2>
+      <article class="property-card">
+        <img
+          src="images/family-home.jpg"
+          alt="Beautiful family home"
+          loading="lazy"
+        >
+
+        <h3>Beautiful Homes</h3>
+
         <p>
-          Discover furnished stays, Airbnbs, guest houses and
-          lodgings for your short-term accommodation needs.
+          Discover homes that suit your lifestyle and needs.
         </p>
       </article>
+
+      <article class="property-card">
+        <img
+          src="images/furnished-stay.jpg"
+          alt="Furnished temporary accommodation"
+          loading="lazy"
+        >
+
+        <h3>Furnished Stays</h3>
+
+        <p>
+          Find furnished accommodation for shorter stays.
+        </p>
+      </article>
+
+      <article class="property-card" id="temporary-stays">
+        <img
+          src="images/guest-house.jpg"
+          alt="Comfortable guest house"
+          loading="lazy"
+        >
+
+        <h3>Guest Houses</h3>
+
+        <p>
+          Explore comfortable guest houses and holiday accommodation.
+        </p>
+      </article>
+
     </section>
+
+    <p class="photo-note">
+      Photographs are illustrative and do not represent confirmed available listings.
+    </p>
+
+    <!-- CLOSING SECTION -->
 
     <section class="closing">
       <h2>Your Next Stay Starts with Pad Casa</h2>
-      <p>Explore. Discover. Find your place.</p>
+
+      <p>
+        Explore. Discover. Find your place.
+      </p>
     </section>
+
   </main>
+
+  <!-- FOOTER -->
 
   <footer>
     &copy; 2026 Pad Casa. All rights reserved.
   </footer>
+
 </body>
 </html>
-```
