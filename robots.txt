@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://padcasa.github.io/padcasa-website/sitemap.xml
