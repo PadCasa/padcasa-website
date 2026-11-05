@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#1267D6">
 
   <title>Pad Casa | Find a Place That Feels Like Home</title>
-
   <meta name="description" content="Discover homes for rent and temporary stays across Kenya with Pad Casa. Find a place that feels like home.">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,27 +19,34 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #17243a;
       background: #ffffff;
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* HEADER */
 
     header {
-      padding: 17px 7%;
+      padding: 13px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #edf1f6;
-      background: #ffffff;
+      border-bottom: 1px solid #eaf0f7;
+      background: rgba(255, 255, 255, 0.97);
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(12px);
     }
 
     .brand {
@@ -51,8 +57,8 @@
     }
 
     .brand img {
-      width: 48px;
-      height: 48px;
+      width: 47px;
+      height: 47px;
       object-fit: contain;
     }
 
@@ -60,20 +66,20 @@
       color: #1267D6;
       font-size: 27px;
       font-weight: 800;
-      letter-spacing: -1px;
+      letter-spacing: -1.2px;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 34px;
     }
 
     nav a {
       color: #34445b;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 700;
+      font-size: 14px;
       transition: color 0.2s;
     }
 
@@ -85,162 +91,232 @@
 
     .hero {
       text-align: center;
-      padding: 100px 20px 85px;
-      background: linear-gradient(
-        180deg,
-        #f0f6ff 0%,
-        #ffffff 100%
-      );
+      padding: 112px 20px 105px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #dceaff 0%, transparent 65%),
+        linear-gradient(180deg, #f2f7ff 0%, #ffffff 100%);
+    }
+
+    .hero-label {
+      display: inline-block;
+      color: #1267D6;
+      background: #e4efff;
+      border: 1px solid #d4e5ff;
+      border-radius: 30px;
+      padding: 7px 16px;
+      margin-bottom: 23px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      max-width: 780px;
+      max-width: 850px;
       margin: auto;
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.12;
-      letter-spacing: -2px;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.1;
+      letter-spacing: -2.7px;
       color: #142d50;
+      font-weight: 800;
     }
 
     .hero p {
-      max-width: 640px;
-      margin: 23px auto 0;
+      max-width: 650px;
+      margin: 25px auto 0;
       color: #64748b;
       font-size: 18px;
+      line-height: 1.8;
     }
 
     /* SECTION INTRODUCTION */
 
     .section-heading {
       text-align: center;
-      padding: 65px 20px 15px;
+      padding: 82px 20px 20px;
     }
 
     .section-heading h2 {
       color: #142d50;
-      font-size: 32px;
-      margin-bottom: 8px;
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
     }
 
     .section-heading p {
       color: #64748b;
       font-size: 16px;
+      max-width: 600px;
+      margin: auto;
     }
 
     /* PROPERTY GALLERY */
 
     .property-gallery {
-      max-width: 1100px;
+      max-width: 1160px;
       margin: auto;
-      padding: 35px 22px 20px;
+      padding: 38px 25px 25px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
     }
 
     .property-card {
       overflow: hidden;
-      border-radius: 15px;
-      border: 1px solid #e8eef6;
+      border-radius: 19px;
+      border: 1px solid #e9eef5;
       background: #ffffff;
-      box-shadow: 0 5px 18px rgba(20, 45, 80, 0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 7px 24px rgba(20, 45, 80, 0.055);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .property-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(20, 45, 80, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(20, 45, 80, 0.12);
     }
 
     .property-card img {
       width: 100%;
-      height: 280px;
+      height: 290px;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .property-card:hover img {
+      transform: scale(1.025);
     }
 
     .property-card h3 {
       color: #1267D6;
       font-size: 21px;
-      padding: 17px 20px 5px;
+      line-height: 1.3;
+      padding: 21px 23px 6px;
     }
 
     .property-card p {
       color: #64748b;
-      padding: 0 20px 20px;
+      padding: 0 23px 23px;
       font-size: 15px;
+      line-height: 1.7;
     }
 
     .photo-note {
       text-align: center;
-      color: #8491a3;
-      font-size: 13px;
-      padding: 10px 20px 55px;
+      color: #8995a6;
+      font-size: 12px;
+      padding: 10px 20px 75px;
     }
 
     /* DOWNLOAD SECTION */
 
     .download-section {
       text-align: center;
-      padding: 75px 20px 80px;
-      background: #f0f6ff;
+      padding: 85px 20px 90px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #dceaff 0%, transparent 75%),
+        #f0f6ff;
+      border-top: 1px solid #e5efff;
+    }
+
+    .download-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .download-label {
+      display: inline-block;
+      color: #1267D6;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
     }
 
     .download-section h2 {
       color: #142d50;
-      font-size: 34px;
-      margin-bottom: 12px;
+      font-size: clamp(29px, 4vw, 38px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 15px;
     }
 
     .download-section p {
       color: #64748b;
       font-size: 17px;
       max-width: 580px;
-      margin: 0 auto 28px;
+      margin: 0 auto 30px;
     }
 
     .download {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       background: #1267D6;
       color: #ffffff;
       text-decoration: none;
       padding: 17px 32px;
-      border-radius: 9px;
+      border-radius: 11px;
       font-weight: 700;
-      font-size: 17px;
-      box-shadow: 0 8px 22px rgba(18, 103, 214, 0.2);
-      transition: background 0.2s, transform 0.2s;
+      font-size: 16px;
+      box-shadow: 0 9px 24px rgba(18, 103, 214, 0.23);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .download:hover {
       background: #0d55b5;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 13px 28px rgba(18, 103, 214, 0.3);
+    }
+
+    .download-note {
+      margin-top: 15px;
+      color: #7b899c;
+      font-size: 12px;
     }
 
     /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 25px 15px;
+      padding: 27px 15px;
       color: #8491a3;
-      font-size: 14px;
+      font-size: 13px;
       border-top: 1px solid #edf1f6;
+      background: #ffffff;
     }
 
-    /* MOBILE RESPONSIVENESS */
+    /* TABLET */
+
+    @media (max-width: 850px) {
+      header {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .property-gallery {
+        gap: 22px;
+      }
+
+      .property-card img {
+        height: 250px;
+      }
+    }
+
+    /* MOBILE */
 
     @media (max-width: 650px) {
       header {
-        padding: 13px 5%;
-        flex-wrap: wrap;
-        gap: 12px;
+        padding: 12px 5%;
+        gap: 10px;
       }
 
       .brand img {
-        width: 40px;
-        height: 40px;
+        width: 39px;
+        height: 39px;
       }
 
       .logo-text {
@@ -248,31 +324,37 @@
       }
 
       nav {
-        gap: 15px;
+        gap: 16px;
       }
 
       nav a {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .hero {
-        padding: 75px 20px 65px;
+        padding: 78px 20px 75px;
+      }
+
+      .hero-label {
+        font-size: 10px;
+        margin-bottom: 19px;
       }
 
       .hero h1 {
-        letter-spacing: -1px;
+        letter-spacing: -1.5px;
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 15px;
+        margin-top: 19px;
       }
 
       .section-heading {
-        padding-top: 45px;
+        padding: 60px 20px 15px;
       }
 
-      .section-heading h2 {
-        font-size: 27px;
+      .section-heading p {
+        font-size: 14px;
       }
 
       .property-gallery {
@@ -281,16 +363,31 @@
         gap: 22px;
       }
 
+      .property-card {
+        border-radius: 16px;
+      }
+
       .property-card img {
         height: 235px;
       }
 
-      .download-section {
-        padding: 55px 20px 60px;
+      .property-card h3 {
+        font-size: 19px;
+        padding: 18px 19px 5px;
       }
 
-      .download-section h2 {
-        font-size: 27px;
+      .property-card p {
+        font-size: 14px;
+        padding: 0 19px 19px;
+      }
+
+      .photo-note {
+        padding-bottom: 55px;
+        font-size: 11px;
+      }
+
+      .download-section {
+        padding: 65px 20px 70px;
       }
 
       .download-section p {
@@ -298,19 +395,38 @@
       }
 
       .download {
+        width: 100%;
+        max-width: 340px;
         font-size: 15px;
-        padding: 15px 22px;
+        padding: 16px 20px;
       }
     }
 
-    @media (max-width: 370px) {
+    @media (max-width: 390px) {
       header {
+        flex-wrap: wrap;
         justify-content: center;
       }
 
       nav {
         width: 100%;
         justify-content: center;
+        padding-bottom: 3px;
+      }
+    }
+
+    /* REDUCED MOTION ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
       }
     }
   </style>
@@ -326,7 +442,7 @@
       <span class="logo-text">Pad Casa</span>
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#homes">Homes</a>
       <a href="#temporary-stays">Temporary Stays</a>
     </nav>
@@ -337,6 +453,8 @@
     <!-- HERO -->
 
     <section class="hero">
+      <span class="hero-label">Your space. Your choice.</span>
+
       <h1>Find a Place That Feels Like Home</h1>
 
       <p>
@@ -388,7 +506,7 @@
         </p>
       </article>
 
-      <article class="property-card">
+      <article class="property-card" id="temporary-stays">
         <img
           src="images/furnished-stay.jpg"
           alt="Furnished temporary accommodation"
@@ -402,7 +520,7 @@
         </p>
       </article>
 
-      <article class="property-card" id="temporary-stays">
+      <article class="property-card">
         <img
           src="images/guest-house.jpg"
           alt="Comfortable guest house"
@@ -425,21 +543,29 @@
     <!-- DOWNLOAD SECTION AT THE BOTTOM -->
 
     <section class="download-section">
+      <div class="download-inner">
 
-      <h2>Ready to Find Your Place?</h2>
+        <span class="download-label">Take Pad Casa with you</span>
 
-      <p>
-        Get started with Pad Casa. Discover homes and temporary
-        stays across Kenya, all from your Android device.
-      </p>
+        <h2>Ready to Find Your Place?</h2>
 
-      <a
-        class="download"
-        href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk"
-      >
-        Download Pad Casa for Android
-      </a>
+        <p>
+          Get started with Pad Casa. Discover homes and temporary
+          stays across Kenya, all from your Android device.
+        </p>
 
+        <a
+          class="download"
+          href="https://github.com/peter-m-njoroge/padcasa-downloads/releases/latest/download/padcasa.apk"
+        >
+          Download Pad Casa for Android
+        </a>
+
+        <div class="download-note">
+          Available for Android devices
+        </div>
+
+      </div>
     </section>
 
   </main>
